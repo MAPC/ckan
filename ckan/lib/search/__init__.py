@@ -301,7 +301,7 @@ def check_solr_schema_version(schema_file=None):
                           ' schema, using file: \n%s' % url)
 
     if not version in SUPPORTED_SCHEMA_VERSIONS:
-        raise SearchError('SOLR schema version not supported: %s. Supported'
+        raise SearchError('SOLR schema version for file %s not supported: %s. Supported'
                           ' versions are [%s]'
-                          % (version, ', '.join(SUPPORTED_SCHEMA_VERSIONS)))
+                          % (version, ', '.join(SUPPORTED_SCHEMA_VERSIONS), schema_file))
     return True
